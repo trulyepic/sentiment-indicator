@@ -5,7 +5,10 @@ from src.sentiment_analysis import apply_sentiment_analysis, determine_market_bi
 from src.utils.article_summarizer import fetch_article_content, summarize_article
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "http://localhost:5173",
+    "http://sentiment-indicator-production.up.railway.app"
+])
 
 
 @app.route("/market-sentiment", methods=["GET"])
