@@ -1,0 +1,7 @@
+﻿# Virtual environment
+venv/
+.idea/
+logs/
+__pycache__/
+*.py[cod]
+.env
