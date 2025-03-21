@@ -7,7 +7,8 @@ from src.utils.article_summarizer import fetch_article_content, summarize_articl
 app = Flask(__name__)
 CORS(app, origins=[
     "http://localhost:5173",
-    "http://sentiment-indicator-production.up.railway.app"
+    "http://sentiment-indicator-production.up.railway.app",
+    "https://sentiment-indicator-production.up.railway.app"
 ])
 
 
