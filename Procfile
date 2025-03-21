@@ -1,1 +1,1 @@
-﻿web: gunicorn -w 4 -b 0.0.0.0:8000 src.api:app
+﻿web: gunicorn -w 4 -b 0.0.0.0:8000 api:app
