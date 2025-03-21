@@ -1,6 +1,6 @@
 import datetime
 from nltk.sentiment import SentimentIntensityAnalyzer
-from utils.article_summarizer import fetch_article_content, summarize_article
+from src.utils.article_summarizer import fetch_article_content, summarize_article
 import nltk
 
 # Ensure the VADER lexicon is available

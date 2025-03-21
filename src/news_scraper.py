@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import datetime
-from config import NEWS_SOURCES
+from src.config import NEWS_SOURCES
 import os
 from utils.yahoo_finance import fetch_yahoo_finance_rss
 import random
