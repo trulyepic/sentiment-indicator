@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import datetime
 from src.config import NEWS_SOURCES
 import os
-from utils.yahoo_finance import fetch_yahoo_finance_rss
+from src.utils.yahoo_finance import fetch_yahoo_finance_rss
 import random
 
 API_URL = "https://financialmodelingprep.com/api/v4/stock-news-sentiments-rss-feed?page=0"
