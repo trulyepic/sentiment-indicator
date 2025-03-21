@@ -8,10 +8,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 NEWS_SOURCES = {
     # "MarketWatch": "https://www.marketwatch.com",
+    "CNBC": "https://www.cnbc.com/finance/",
+    "Reuters": "https://www.reuters.com/markets/",
     "USAToday": "https://www.usatoday.com/money/",
     "APNews": "https://apnews.com/hub/financial-markets",
     "YahooFinance": "https://finance.yahoo.com",
-    "CNBC": "https://www.cnbc.com/finance/",
-    "Reuters": "https://www.reuters.com/markets/",
-
 }

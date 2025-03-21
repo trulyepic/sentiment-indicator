@@ -28,8 +28,8 @@ def clean_link(link, base_url):
         return link
 
     # Handle Reuters case to avoid duplicate "markets"
-    if "reuters.com" in base_url and link.startswith("/markets/"):
-        return "https://www.reuters.com" + link  # Ensure it starts from root
+    if "reuters.com" in base_url:
+        return "https://www.reuters.com" + link
 
     # Fix USA Today links by removing duplicate `/money`
     if "usatoday.com" in base_url and "/money/" in link:
