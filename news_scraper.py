@@ -6,8 +6,8 @@ import os
 from utils.yahoo_finance import fetch_yahoo_finance_rss
 import random
 
-API_URL = "https://financialmodelingprep.com/api/v4/stock-news-sentiments-rss-feed?page=0"
-API_KEY = os.getenv("FMP_API_KEY")
+# API_URL = "https://financialmodelingprep.com/api/v4/stock-news-sentiments-rss-feed?page=0"
+# API_KEY = os.getenv("FMP_API_KEY")
 # Define headers to mimic a browser request
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

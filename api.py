@@ -44,24 +44,28 @@ def headlines():
 @app.route("/summaries", methods=["GET"])
 def summaries():
     """Endpoint to return article summaries."""
-    news_data = fetch_news()
-    summarized_data = []
+    try:
+        news_data = fetch_news()
+        summarized_data = []
 
-    for news in news_data:
-        article_text = fetch_article_content(news["link"])
-        if not article_text.strip():
-            continue  # Skip articles with empty content
+        for news in news_data:
+            article_text = fetch_article_content(news["link"])
+            if not article_text.strip():
+                continue
 
-        summary = summarize_article(article_text) or "No summary available."
+            summary = summarize_article(article_text) or "No summary available."
 
-        summarized_data.append({
-            "source": news["source"],
-            "headline": news["headline"],
-            "summary": summary,
-            "link": news["link"]
-        })
+            summarized_data.append({
+                "source": news["source"],
+                "headline": news["headline"],
+                "summary": summary,
+                "link": news["link"]
+            })
 
-    return jsonify(summarized_data)
+        return jsonify(summarized_data)
+    except Exception as e:
+        print(f"[ERROR] /summaries failed: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
