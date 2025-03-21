@@ -17,6 +17,9 @@ def market_sentiment():
     """Endpoint to return the overall market sentiment score."""
     try:
         news_data = fetch_news()
+        if not news_data:
+            raise ValueError("No news data returned")
+
         sentiment_score = apply_sentiment_analysis(news_data)
         market_bias = determine_market_bias(sentiment_score)
 
