@@ -7,7 +7,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 NEWS_SOURCES = {
-    "MarketWatch": "https://www.marketwatch.com",
+    # "MarketWatch": "https://www.marketwatch.com",
     "USAToday": "https://www.usatoday.com/money/",
     "APNews": "https://apnews.com/hub/financial-markets",
     "YahooFinance": "https://finance.yahoo.com",
