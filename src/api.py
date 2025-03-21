@@ -5,23 +5,29 @@ from src.sentiment_analysis import apply_sentiment_analysis, determine_market_bi
 from src.utils.article_summarizer import fetch_article_content, summarize_article
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "http://localhost:5173",
-    "https://sentiment-indicator-production.up.railway.app"
-])
+# CORS(app, origins=[
+#     "http://localhost:5173",
+#     "https://sentiment-indicator-production.up.railway.app"
+# ])
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 
 @app.route("/market-sentiment", methods=["GET"])
 def market_sentiment():
     """Endpoint to return the overall market sentiment score."""
-    news_data = fetch_news()
-    sentiment_score = apply_sentiment_analysis(news_data)
-    market_bias = determine_market_bias(sentiment_score)
+    try:
+        news_data = fetch_news()
+        sentiment_score = apply_sentiment_analysis(news_data)
+        market_bias = determine_market_bias(sentiment_score)
 
-    return jsonify({
-        "market_sentiment_score": sentiment_score,
-        "market_bias": market_bias
-    })
+        return jsonify({
+            "market_sentiment_score": sentiment_score,
+            "market_bias": market_bias
+        })
+
+    except Exception as e:
+        print(f"[ERROR] /market-sentiment failed: {e}")
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/headlines", methods=["GET"])
