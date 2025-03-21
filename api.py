@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-from src.news_scraper import fetch_news
-from src.sentiment_analysis import apply_sentiment_analysis, determine_market_bias
-from src.utils.article_summarizer import fetch_article_content, summarize_article
+from news_scraper import fetch_news
+from sentiment_analysis import apply_sentiment_analysis, determine_market_bias
+from utils.article_summarizer import fetch_article_content, summarize_article
 
 app = Flask(__name__)
 # CORS(app, origins=[
